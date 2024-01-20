@@ -48,4 +48,6 @@ function getRandomElement<T>(list: T[] ): T {
 }
 
 getRandomElement<string>(['a', 'b', 'c', 'd']);
-getRandomElement<number>([1, 2, 3, 4,])
+getRandomElement<number>([1, 2, 3, 4,]);
+getRandomElement(['1', 2, '3', 4,]); // getRandomElement<string | number>(list: (string | number)[]): string | number
+
