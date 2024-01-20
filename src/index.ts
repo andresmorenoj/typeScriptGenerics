@@ -52,11 +52,28 @@ getRandomElement<number>([1, 2, 3, 4,]);
 getRandomElement(['1', 2, '3', 4,]); // getRandomElement<string | number>(list: (string | number)[]): string | number
 
 
-const mergeGenerics = <T, U>(object1: T, object2: U): T & U => {
+// const mergeGenerics = <T, U>(object1: T, object2: U): T & U => {
+// 	return {
+// 		...object1,
+// 		...object2
+// 	}
+// };
+
+// mergeGenerics({name: "Elton"}, {pet: "Locky", age: 10});
+
+const mergeGenerics = <T extends object, U extends object>(object1: T, object2: U): T & U => {
 	return {
 		...object1,
 		...object2
 	}
-}
+};
 
 mergeGenerics({name: "Elton"}, {pet: "Locky", age: 10});
+
+interface ILengthy {
+	length: number;
+};
+
+const printDouleLength = <T extends ILengthy>(thing: T): number => {
+	return thing.length * 2
+}
