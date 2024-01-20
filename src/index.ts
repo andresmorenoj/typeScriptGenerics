@@ -76,4 +76,26 @@ interface ILengthy {
 
 const printDouleLength = <T extends ILengthy>(thing: T): number => {
 	return thing.length * 2
+};
+
+interface ISong {
+	title: string;
+	artist: string;
+};
+
+interface IVideo {
+	title: string;
+	creator: string;
+	resolution: string;
 }
+
+class VideoPlayList<T> {
+	public queue: T[] = []
+
+	add(el: T) {
+		this.queue.push(el);
+	}
+};
+
+const songs = new VideoPlayList<ISong>();
+const videos = new VideoPlayList<IVideo>();
