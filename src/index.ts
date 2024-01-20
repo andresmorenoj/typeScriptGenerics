@@ -51,3 +51,12 @@ getRandomElement<string>(['a', 'b', 'c', 'd']);
 getRandomElement<number>([1, 2, 3, 4,]);
 getRandomElement(['1', 2, '3', 4,]); // getRandomElement<string | number>(list: (string | number)[]): string | number
 
+
+const mergeGenerics = <T, U>(object1: T, object2: U): T & U => {
+	return {
+		...object1,
+		...object2
+	}
+}
+
+mergeGenerics({name: "Elton"}, {pet: "Locky", age: 10});
