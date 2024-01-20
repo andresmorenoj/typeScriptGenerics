@@ -36,3 +36,16 @@ const anotherIdentity = <T>(item: T): T => {
 type TColors = 'white' | 'black'
 
 anotherIdentity<TColors>('white');
+
+interface ICat {
+	name: string;
+	breed: string;
+}
+
+function getRandomElement<T>(list: T[] ): T {
+	const randIndex = Math.floor(Math.random() * list.length);
+	return list[randIndex];
+}
+
+getRandomElement<string>(['a', 'b', 'c', 'd']);
+getRandomElement<number>([1, 2, 3, 4,])
